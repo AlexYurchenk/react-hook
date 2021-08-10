@@ -7,14 +7,18 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Select from "@material-ui/core/Select";
+import { Link } from "react-router-dom";
+
+import IconButton from "@material-ui/core/IconButton";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import InputBase from "@material-ui/core/InputBase";
 import MenuItem from "@material-ui/core/MenuItem";
 import React, { useState, useEffect } from "react";
-
 import { useForm } from "react-hook-form";
 const axios = require("axios").default;
+
 const BootstrapInput = withStyles((theme) => ({
   root: {
     "label + &": {
@@ -96,10 +100,14 @@ export default function SignIn() {
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
+
       <div className={classes.paper}>
         <Typography component="h1" variant="h5">
           Search movie
         </Typography>
+        <IconButton component={Link} to="/movie-search" aria-label="delete">
+          <ArrowBackIosIcon />
+        </IconButton>
         <form
           className={classes.form}
           noValidate
